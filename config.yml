@@ -1,0 +1,5 @@
+development:
+  password: bcd8b714bd75c914a2e8e0011ad453ac
+  theme_id: "71215808576"
+  store: promed-corp.myshopify.com
+  timeout: 30s

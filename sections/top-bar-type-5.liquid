@@ -1,0 +1,156 @@
+ {% if section.settings.display_top_bar %}    
+<div class="top_bar top-bar-type-5" style="background:{{ section.settings.top_bar_bg }};">  
+  <div class="container">
+    <div class="header_social top_bar_left">
+      <ul class="menu_bar_right grid__item">
+        <li class="header_currency">
+          <ul class="tbl-list">
+            <li class="currency dropdown-parent uppercase currency-block">
+              {% if section.settings.display_currency %}    
+              {% include 'currencies-switcher' %}
+              {% endif %}
+            </li>
+          </ul>
+        </li>    
+        {% if section.settings.header_phone_value != blank %}
+        <li class="medium-down--hide phone_no"><i class="{{ section.settings.header_phone_class }}"></i><span> {{ section.settings.header_phone_value }}</span></li>
+        {% endif %}
+        {% if section.settings.header_date != blank %}
+        <li class="medium-down--hide"><i class="{{ section.settings.header_time_class }}"></i><span> {{ section.settings.header_date }}</span></li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="top_bar_menu">      
+      <ul class="menu_bar_right grid__item wide--one-sixth post-large--one-sixth">
+        {% if section.settings.header_mail_value != blank %}
+        <li class="medium-down--hide"><i class="{{ section.settings.header_mail_label_class }}"></i> <a href="mailto:{{ section.settings.header_mail_value }}"> {{ section.settings.header_mail_value }}</a></li>
+        {% endif %}
+        {% if section.settings.display_header_social %}
+        <li class="header_social">     
+          {% include 'social-links-type-6' %}
+        </li>
+        {% endif %}      
+      </ul>        
+    </div>
+  </div>
+</div>
+ {% endif %}     
+<style>
+  
+  .header-type-5 .header-top a.close { background: {{ section.settings.stripe_icon }}; }  
+    .header-type-5 .header-top a.close:hover { background: {{ section.settings.stripe_icon_hover }}; }  
+    .header-type-5 .header-top { background: {{ section.settings.stripe_bg }}; }      
+    .header-type-5 .header-top ul li { color: {{ section.settings.stripe_text }}; }    
+
+    /* Top block */
+    .header-type-5 .top_bar { background: {{ section.settings.top_bar_bg }}; }
+    .header-type-5 .top_bar li { color:{{section.settings.top_bar_text}};}     
+    .header-type-5 .top_bar a { color:{{section.settings.top_bar_links }};}    
+    .header-type-5 .top_bar a:hover, .header-type-5 .top_bar a:hover span { color:{{section.settings.top_bar_link_hover }};}   
+
+
+    .header-type-5 .top_bar li a,.header-type-5 .top_bar li span,.top-bar-type-5.top_bar .tbl-list>li.currency>.dropdown-toggle { border-right:1px solid {{ section.settings.top_border_between_bars }}; }
+    .header-type-5 .top_bar ul li:last-child,.header-type-5 .top_bar li:last-child span { border-right:none; }
+
+  
+</style>
+
+
+
+
+{% schema %}
+
+
+
+
+{
+"name": "Header",
+"settings": [ 
+  {
+  "type":"checkbox",
+  "id": "display_top_bar",
+  "label": "Display topbar"	
+  },
+  {
+  "type":"checkbox",
+  "id": "display_currency",
+  "label": "Display Currency"	
+  },
+{
+  "type": "checkbox",
+  "id": "display_header_social",
+  "label": "Display social links"
+  },  
+ {
+  "type": "text",
+  "id": "header_phone_class",
+  "label": "Icon class",
+  "default": "zmdi zmdi-phone"
+  },
+  {
+  "type": "text",
+  "id": "header_phone_value",
+  "label": "Phone number",
+  "default": "(00) 000 111 222"
+  },  
+  {
+  "type": "text",
+  "id": "header_time_class",
+  "label": "Icon class",
+  "default": "zmdi zmdi-time"
+  },
+  {
+  "type": "text",
+  "id": "header_date",
+  "label": "Day & Time",
+  "default": "(00) 000 111 222"
+  },  
+  {
+  "type": "text",
+  "id": "header_mail_label_class",
+  "label": "Icon class",
+  "default": "zmdi zmdi-email"
+  },  
+  {
+  "type": "text",
+  "id": "header_mail_value",
+  "label": "Mail address",
+  "default": "info@somedomain.com"
+  },
+{
+  "type": "header",
+  "content": "Top Bar"
+},
+{
+  "type": "color",
+  "id": "top_bar_bg",
+  "label": "Top bar background",
+  "default": "#fff"
+  },
+{
+  "type": "color",
+  "id": "top_bar_text",
+  "label": "Top bar text",
+  "default": "#000"
+  },
+{
+  "type": "color",
+  "id": "top_bar_links",
+  "label": "Top bar links",
+  "default": "#000"
+  },
+{
+  "type": "color",
+  "id": "top_bar_link_hover",
+  "label": "Top bar links hover",
+  "default": "#35b8f4"
+  },
+{
+  "type": "color",
+  "id": "top_border_between_bars",
+  "label": "Border lines",
+  "default": "#e4e4e4"
+  }
+]
+}
+{% endschema %}
