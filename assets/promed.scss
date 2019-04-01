@@ -1,0 +1,419 @@
+/*
+Template Name: Promed Theme
+Author: Richievc
+Email: richievc@gmail.com
+File: scss
+
+$main-font:              'Montserrat', sans-serif;
+$stylish-font:           'Calafia-Regular';
+$promed-font:            AnotherFlight;
+
+// Normal Color
+$white:                 #ffffff;
+$grey:                  #999999;
+$black:                 #000000;
+$red:                   #ff0000;
+$green:                 green;
+$orange:                #ff6a5b;
+$yellow:                #fed700;
+$purple:                #7460ee;
+$blue:                  #2a74ba;
+
+$primary:               #2a74ba;
+$second:                #334221;
+$accent:                #c0e5fa;
+*/
+
+/** CUSTOM FONTS **/
+@font-face {
+  font-family: AnotherFlight;
+  src: url('Another Flight.otf');
+}
+@font-face {
+  font-family: Champagne;
+  src: url('Champagne & Limousines.ttf');
+}
+body {
+  color: #111;
+  font-family: "AnotherFlight", "Champagne", Arial, Baskerville, monospace;
+}
+a, a:visited, a:focus {
+  color: #111;
+  text-decoration: none !important;
+}
+a:hover {
+  color: #2a74ba;
+  text-decoration:none;
+}
+
+button.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 180px;
+}
+
+/** LOGO **/
+.header {
+  min-height: 100px;
+  height: auto;
+}
+.logo-block {
+  padding: 10px;
+  text-align: center;
+}
+.normal-logo {
+  width: 160px;
+  margin: 0 auto;
+}
+.social-icons {
+  float: right;
+}
+
+.social-icons li a span.fa-facebook {
+  color: #3c5a99;
+}
+.social-icons li a span.fa-google {
+  color: #4285F4;
+}
+.social-icons li a span.fa-twitter {
+  color: #1da1f2;
+}
+.social-icons li a span.fa-tumblr {
+  color: #1da1f2;
+}
+.social-contact-block > .social-icons li {
+  background: #fff;
+}
+
+/** TOP NAV MENU **/
+ul.corp-menu {
+  margin:0;
+  padding:0;
+  list-style-type:none;
+  width:auto;
+  position:relative;
+  display:block;
+  height:30px;
+  text-transform:uppercase;
+  font-size:10px;
+  font-family: Arial, Baskerville, monospace;
+}
+ul.corp-menu li {
+  display:block;
+  float:left;
+  margin:0;
+  padding:0;
+}
+ul.corp-menu li a {
+  display:block;
+  float:left;
+  color:#0b0b0b;
+  text-decoration:none;
+  padding: 0 6px;
+}
+ul.corp-menu li a:hover {
+  color: #c0e5fa;
+}
+
+/** MID NAV CONTAINER **/
+div.pro-mid-nav {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #eeeeee;
+}
+ul#pro-menu li a {
+  color:#0b0b0b;
+  text-decoration: none;
+  z-index: 999999;
+}
+ul.pro-cart {
+  list-style-type: none;
+  margin-left: 5px;
+}
+
+/** MID NAV MENU **/
+ul#pro-menu {
+  margin:0;
+  padding:0;
+  list-style-type:none;
+  width:auto;
+  position:relative;
+  display:block;
+  min-height:30px;
+  line-height: 30px;
+  text-transform:uppercase;
+  font-size:12px;
+  font-weight:bold;
+  font-family: Arial, Baskerville, monospace;
+}
+
+ul#pro-menu li {
+  display: block;
+  margin:0;
+  min-height: 30px;
+  line-height: 30px;
+  padding:0;
+  z-index: 999999;
+}
+
+ul.dropdown-cart li.cart-item {
+  display:        block;
+  padding:        8px 16px;
+  margin:         3px 0;
+  width:          100%;
+  height:         auto;
+  border-radius:  none;
+}
+ul.dropdown-cart li.item .item-picture {
+  width:          120px;
+  float:          left;
+  text-align:     center;
+  background:     #eee;
+  border-right:   1px solid #777;
+}
+ul.dropdown-cart li.cart-item .cart-title {
+  display:        block;
+  width:          100%;
+  font-size:      12px;
+  font-weight:    bold;
+  line-height:    20px;
+  border-bottom:  1px dashed #888;
+}
+.cart-collateral {
+  font-size:      11px;
+  font-weight:    bold;
+}
+ul.dropdown-cart li .cart-footer {
+  background:     #111;
+  height:         100%;
+}
+ul.dropdown-cart li.cart-footer cart-total {
+  text-align:     right;
+  background:     #eee
+}
+ul.dropdown-cart li.cart-footer p.cart-total span.label,
+ul.dropdown-cart li.cart-footer p.cart-total span.price {
+  color:          #fff;
+}
+.no-items {
+  line-height: 35px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* CSS for each Parent Item */
+/* Dropdown Panel */
+.pro-mega-menu
+{
+  border-radius: 0;
+  height: 240px;
+  padding: 10px;
+  background: #111;
+}
+
+/* For mobile breakpoints: */
+@media only screen and (max-width: 540px) {
+
+  .normal-logo {
+    width: 150px;
+  }
+
+  /** LOGO **/
+  .header {
+    min-height: 70px;
+  }
+  #proMedNavBar {
+    width: 280px;
+  }
+  ul#pro-menu li, ul#pro-menu li a {
+    width: 260px;
+    background: #fff;
+  }
+}
+
+
+ul.pro-mega-nav li div.pro-mega-menu .container
+{
+  display: block;
+  background: #ffffff;
+  min-height: 200px;
+  height: 200px;
+}
+.image-panel
+{
+  display: block;
+  height: 160px;
+  background: #fff;
+  border: 1px solid #eee;
+}
+.no-gutter
+{
+  margin-right: 0;
+  margin-left: 0;
+}
+.no-gutter > [class*="col-"]
+{
+  padding-right: 0;
+  padding-left: 0;
+}
+.fill
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+.fill a, .fill a img
+{
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
+}
+.panel
+{
+  border-radius: 0;
+  background: inherit;
+}
+.detail-panel-title
+{
+  padding: 0 5px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+.detail-panel-text
+{
+  height: 80px;
+  padding: 0 5px;
+  font-size: 11px;
+}
+
+
+
+/** LOWER CONTAINER  **/
+div.pro-lower-nav {
+  height: 30px;
+  line-height: 30px;
+}
+
+/** MEGA-MENU PARENT NAVIGATION **/
+ul.pro-mega-nav {
+  margin:0;
+  padding:0;
+  list-style-type:none;
+  width:100%;
+  position:relative;
+  display:block;
+  height:30px;
+}
+ul.pro-mega-nav li {
+  display:inline;
+  min-width: 40px;
+  width: auto;
+  margin:0;
+  padding:0;
+}
+ul.pro-mega-nav li a {
+  color:#111;
+  text-decoration:none;
+  padding: 5px;
+  height:30px;
+  font-family: Arial, Baskerville, monospace;
+  text-transform:uppercase;
+  font-size:10px;
+  font-weight:normal;
+}
+ul.pro-mega-nav li:hover a.mega-dd {
+  background: #B6A99E;
+}
+
+
+
+
+/** LOWER CONTAINER  **/
+div.pro-lower-nav {
+  height: 30px;
+  line-height: 30px;
+}
+
+
+
+
+
+
+
+/** CONTENT AREA **/
+.main-content {
+  margin-top: 100px !important;
+}
+
+
+
+
+
+
+/** EXTRA **/
+.shadow {
+  -webkit-box-shadow: -10px 10px 17px -13px rgba(0,0,0,0.75);
+  -moz-box-shadow: -10px 10px 17px -13px rgba(0,0,0,0.75);
+  box-shadow: -10px 10px 17px -13px rgba(0,0,0,0.75);
+}
+.sexy_line {
+  display:block;
+  border:none;
+  color:white;
+  height:3px;
+  background:black;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 300, from(#000), to(#fff));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

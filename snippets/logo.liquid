@@ -1,7 +1,7 @@
 {% if template == 'index' %}
 <h1 class="grid__item site-header__logo" itemscope itemtype="http://schema.org/Organization">
   {% else %}
-  <div class="h1 site-header__logo" itemscope itemtype="http://schema.org/Organization">
+  <div class="h1 grid__item site-header__logo" itemscope itemtype="http://schema.org/Organization">
     {% endif %}
     {% if settings.logo_use_image %}
     <a href="/" style="max-width: {{ settings.logo_max_width }}px;">

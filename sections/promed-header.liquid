@@ -1,0 +1,738 @@
+<!-- TOP NAV BAR -->
+<div class="row hidden-sm hidden-xs">
+
+    <div class="pro-top-nav col-lg-7 col-md-7">
+        {% if section.settings.show_phone != blank %}
+            <i class="fa fa-phone"></i> {{ settings.company_support_phone }}
+        {% endif %}
+
+        {% if section.settings.show_email != blank %}
+            | <i class="fa fa-envelope"></i> <a href="mailto:{{ settings.company_support_email }}">{{ settings.company_support_email }}</a>
+        {% endif %}
+    </div>
+
+    <div class="pro-top-nav col-lg-5 col-md-5">
+        <span class="pull-right">{% include 'mega-menu' %}</span>
+    </div>
+
+</div>
+
+<!-- MID MENU AND CART TOOLS -->
+<div class="row">
+    <span class="nav-toggle-button-container hidden-xl hidden-lg hidden-md">{% include 'site-nav' %}</span>
+
+    <div class="pro-mid-nav col-lg-8 hidden-sm hidden-xs">
+        {% include 'site-nav' %}
+    </div>
+
+    <div class="pro-mid-nav col-lg-4 col-sm-12 col-xs-12" style="text-align: right;">
+
+        <span class="pull-left hidden-xl hidden-lg hidden-md">{% include 'pro-header-cart' %}</span>
+
+        {% if shop.customer_accounts_enabled %}
+            {% if customer %}
+
+                <a class="btn btn-xs btn-default" href="/account" title="{{ 'layout.customer.account' | t }}">
+                    <i class="icon-user icons" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">{{ 'layout.customer.account' | t }}</span>
+                </a>
+
+            {% else %}
+
+                <a class="btn btn-xs btn-default" href="/account/login" title="{{ 'layout.customer.log_in' | t }}">
+                    <i class="icon-login icons" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Login</span>
+                </a>
+
+                <a class="btn btn-xs btn-default" href="/account/register" title="{{ 'layout.customer.create_account' | t }}">
+                    <i class="icon-user icons" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Register</span>
+                </a>
+
+            {% endif %}
+        {% endif %}
+
+        {% if section.settings.display_wishlist %}
+
+            <a class="btn btn-xs btn-default" href="/pages/wishlist" title="{{ 'products.wishlist.wishlist_name' | t }}">
+                <i class="icon-heart icons" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">{{ 'products.wishlist.wishlist_name' | t }}</span>
+            </a>
+
+        {% endif %}
+
+        {% if customer %}
+            <a class="btn btn-xs btn-default" href="/account/logout" title="{{ 'layout.customer.log_out' | t }}" data-value="value 1">
+                <i class="fa fa-power-off"></i>
+            </a>
+        {% endif %}
+
+    </div>
+</div>
+
+<!-- LOWER NAV BAR -->
+<div class="row hidden-md hidden-sm hidden-xs">
+    <div class="pro-lower-nav col-lg-8" style="">
+        {%  if section.settings.display_megamenu %}
+            {% include 'site-nav-mega' %}
+        {%  endif %}
+    </div>
+    <div class="pro-lower-nav col-lg-4 col-sm-8">
+        <span>{% include 'pro-header-cart' %}</span>
+        <span class="hidden-sm hidden-xs">{% include 'social-links-type-6' %}</span>
+    </div>
+</div>
+
+<!-- DO NOT EDIT BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING -->
+{% schema %}
+  {
+    "name": "Promed Mega Header",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "show_phone",
+            "label": "Show Support Phone",
+            "info": "Info Managed in Theme Settings under Company Details"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_email",
+            "label": "Show Support Email",
+            "info": "Info Managed in Theme Settings under Company Details"
+        },
+        {
+            "type": "checkbox",
+            "id": "display_wishlist",
+            "label": "Display Wishlist"
+        },
+        {
+            "type": "header",
+            "content": "Pro MegaMenu Settings"
+        },
+
+
+        /** MEGA MENU SETTINGS **/
+        {
+            "type": "checkbox",
+            "id": "display_megamenu",
+            "label": "Display ProMega Menu"
+        },
+        {
+            "type": "header",
+            "content": "Menu Item Slot One"
+        },
+
+
+        /** PANEL ONE **/
+        {
+            "type": "text",
+            "id": "menu_slot_one",
+            "label": "Enter Menu Name Slot 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "menu_slot_one_image_one",
+            "label": "Select Image"
+        },
+        {
+            "type": "url",
+            "id": "menu_slot_one_url_one",
+            "label": "Enter Menu URL"
+        },
+        {
+            "type": "text",
+            "id": "menu_slot_one_title_one",
+            "label": "Enter Panel Title"
+        },
+        {
+            "type": "text",
+            "id": "menu_slot_one_tagline_one",
+            "label": "Enter Panel Tagline"
+        },
+
+        /** PANEL TWO **/
+        {
+            "type": "image_picker",
+            "id": "menu_slot_one_image_two",
+            "label": "Select Image"
+        },
+        {
+            "type": "url",
+            "id": "menu_slot_one_url_two",
+            "label": "Enter Menu URL"
+        },
+        {
+            "type": "text",
+            "id": "menu_slot_one_title_two",
+            "label": "Enter Panel Title"
+        },
+        {
+            "type": "text",
+            "id": "menu_slot_one_tagline_two",
+            "label": "Enter Panel Tagline"
+        },
+        /** PANEL THREE **/
+        {
+        "type": "image_picker",
+        "id": "menu_slot_one_image_three",
+        "label": "Select Image"
+        },
+        {
+        "type": "url",
+        "id": "menu_slot_one_url_three",
+        "label": "Enter Menu URL"
+        },
+        {
+        "type": "text",
+        "id": "menu_slot_one_title_three",
+        "label": "Enter Panel Title"
+        },
+        {
+        "type": "text",
+        "id": "menu_slot_one_tagline_three",
+        "label": "Enter Panel Tagline"
+        },
+
+        /** PANEL FOUR **/
+        {
+        "type": "image_picker",
+        "id": "menu_slot_one_image_four",
+        "label": "Select Image"
+        },
+        {
+        "type": "url",
+        "id": "menu_slot_one_url_four",
+        "label": "Enter Menu URL"
+        },
+        {
+        "type": "text",
+        "id": "menu_slot_one_title_four",
+        "label": "Enter Panel Title"
+        },
+        {
+        "type": "text",
+        "id": "menu_slot_one_tagline_four",
+        "label": "Enter Panel Tagline"
+        },
+
+
+    /** MENU ITEM SLOT TWO **/
+    {
+    "type": "header",
+    "content": "Menu Item Slot Two"
+    },
+
+    /** PANEL ONE **/
+    {
+    "type": "text",
+    "id": "menu_slot_two",
+    "label": "Enter Menu Name Slot 2"
+    },
+    {
+    "type": "image_picker",
+    "id": "menu_slot_two_image_one",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_two_url_one",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_two_title_one",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_two_tagline_one",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL TWO **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_two_image_two",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_two_url_two",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_two_title_two",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_two_tagline_two",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL THREE **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_two_image_three",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_two_url_three",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_two_title_three",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_two_tagline_three",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL FOUR **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_two_image_four",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_two_url_four",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_two_title_four",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_two_tagline_four",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** MENU ITEM SLOT THREE **/
+    {
+    "type": "header",
+    "content": "Menu Item Slot Three"
+    },
+
+    /** PANEL ONE **/
+    {
+    "type": "text",
+    "id": "menu_slot_three",
+    "label": "Enter Menu Name"
+    },
+    {
+    "type": "image_picker",
+    "id": "menu_slot_three_image_one",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_three_url_one",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_three_title_one",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_three_tagline_one",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL TWO **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_three_image_two",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_three_url_two",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_three_title_two",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_three_tagline_two",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL THREE **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_three_image_three",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_three_url_three",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_three_title_three",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_three_tagline_three",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL FOUR **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_three_image_four",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_three_url_four",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_three_title_four",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_three_tagline_four",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** MENU ITEM SLOT FOUR **/
+    {
+    "type": "header",
+    "content": "Menu Item Slot Four"
+    },
+
+    /** PANEL ONE **/
+    {
+    "type": "text",
+    "id": "menu_slot_four",
+    "label": "Enter Menu Name"
+    },
+    {
+    "type": "image_picker",
+    "id": "menu_slot_four_image_one",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_four_url_one",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_four_title_one",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_four_tagline_one",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL TWO **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_four_image_two",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_four_url_two",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_four_title_two",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_four_tagline_two",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL THREE **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_four_image_three",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_four_url_three",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_four_title_three",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_four_tagline_three",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL FOUR **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_four_image_four",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_four_url_four",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_four_title_four",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_four_tagline_four",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** MENU ITEM SLOT FIVE **/
+    {
+    "type": "header",
+    "content": "Menu Item Slot Five"
+    },
+
+    /** PANEL ONE **/
+    {
+    "type": "text",
+    "id": "menu_slot_five",
+    "label": "Enter Menu Name"
+    },
+    {
+    "type": "image_picker",
+    "id": "menu_slot_five_image_one",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_five_url_one",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_five_title_one",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_five_tagline_one",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL TWO **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_five_image_two",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_five_url_two",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_five_title_two",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_five_tagline_two",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL THREE **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_five_image_three",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_five_url_three",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_five_title_three",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_five_tagline_three",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL FOUR **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_five_image_four",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_five_url_four",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_five_title_four",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_five_tagline_four",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** MENU ITEM SLOT SIX **/
+    {
+    "type": "header",
+    "content": "Menu Item Slot Six"
+    },
+
+    /** PANEL ONE **/
+    {
+    "type": "text",
+    "id": "menu_slot_six",
+    "label": "Enter Menu Name"
+    },
+    {
+    "type": "image_picker",
+    "id": "menu_slot_six_image_one",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_six_url_one",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_six_title_one",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_six_tagline_one",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL TWO **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_six_image_two",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_six_url_two",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_six_title_two",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_six_tagline_two",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL THREE **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_six_image_three",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_six_url_three",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_six_title_three",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_six_tagline_three",
+    "label": "Enter Panel Tagline"
+    },
+
+    /** PANEL FOUR **/
+    {
+    "type": "image_picker",
+    "id": "menu_slot_six_image_four",
+    "label": "Select Image"
+    },
+    {
+    "type": "url",
+    "id": "menu_slot_six_url_four",
+    "label": "Enter Menu URL"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_six_title_four",
+    "label": "Enter Panel Title"
+    },
+    {
+    "type": "text",
+    "id": "menu_slot_six_tagline_four",
+    "label": "Enter Panel Tagline"
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

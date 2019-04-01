@@ -1,129 +1,97 @@
-<div class="site-nav-dropdown">     
- <div class="container   {{ block_style }}"> 
-      <div class="col-1 parent-mega-menu">        
-        {% for l in linklists[main_linklist].links %}
-        <div class="inner col-xs-12{% if banner_first_style != blank or banner_second_style != blank or banner_third_style or featured_product %} col-sm-4{% else %} col{% endif %}">
-          <!-- Menu level 2 -->
-          <a  href="{{ l.url }}" class="{%if linklists[link.handle] != empty %}menu__moblie {% endif %} {% if l.active %} current {% endif %}">
-            {{ l.title }} 
-            {% if block_style == "style_4" %}
-            {% assign compare = l.title | handleize %}
-            {% for collection in collections %}
-            {% if collection.handle ==  compare %} 
-       		{% if collection.image.src != blank %}
-          	{{ collection.image.src | collection_img_url: 'medium' | img_tag: collection_title }}      		
-            {% endif %}
-          {% endif %}
-            {% endfor %}
-            {% endif %}
-          </a>
-          {% if linklists[l.handle] != empty %}
-          <ul class="dropdown">
-            {% for child_l in linklists[l.handle].links %}
-            <!-- Menu level 3 -->
-            <li>
-              <a href="{{ child_l.url }}" {% if child_l.active %}class="current"{% endif %}>
-                {{ child_l.title }}
-              </a>
-            </li>
-            {% endfor %}
-          </ul>
-          {% endif %}
-        </div>
-        {% endfor %}
-     </div>
-      {% if block_style == "style_1" %}
-      {% if banner_first_style != blank or banner_second_style != blank %}
-      <div class="col-2">
-       
-        {% if banner_first_style != blank %}
-       
-          <a href="{{ link_banner_first_style }}" title="">
-            <img src="{{ banner_first_style | img_url : "2000x" }}" alt="" />
-          </a>
-       
-        {% endif %}
-        {% if banner_second_style != blank %}
-      
-          <a href="{{ link_banner_second_style }}" title="">
-            <img src="{{ banner_second_style | img_url : "2000x" }}" alt="" />
-          </a>
-      
-        {% endif %}
-      </div>
-      {% endif %}
-      {% elsif block_style == "style_2" %}
-      {% if banner_first_style != blank or banner_second_style != blank or banner_third_style != blank %}
-      <div class="col-2">
-        {% if banner_second_style != blank or banner_third_style != blank %}
-        <div class="col-left col-sm-6">
-          <a href="{{ link_banner_second_style }}" title="">
-            <img src="{{ banner_second_style | img_url : "2000x" }}" alt="" />
-          </a>
-          <a href="{{ link_banner_third_style }}" title="">
-            <img src="{{ banner_third_style | img_url : "2000x" }}" alt="" />
-          </a>
-        </div>
-        {% endif %}
-        {% if banner_first_style != blank %}
-        <div class="col-right col-sm-6">
-          <a href="{{ link_banner_first_style }}" title="">
-            <img src="{{ banner_first_style | img_url : "2000x" }}" alt="" />
-          </a>
-        </div>
-        {% endif %}    
+<div class="top-menu-nav">
+    <ul class="corp-menu">
+        {% for link in linklists.header-main.links %}
+            {% assign i = forloop.index | downcase %}
+            {% assign cat = link.title | handleize %}
 
-      </div>
-      {% endif %}
-      {% elsif block_style == "style_3" %}
-      {% if banner_first_style != blank or featured_product != blank %}
-     <div class="col-2">
-          {% if product.title.size > 0 %}
-          <div class="col-left">            
-            <div class="widget-featured-product {% unless product.available %} product-price--sold-out grid-view-item--sold-out{% endunless %}">
-              {% if title_featured_product != blank %}
-              <div class="widget-title">   
-                <h3>     
-                  <span>{{ title_featured_product }}</span>      
-                </h3>
-              </div>
-              {% endif %}
-              <div class="widget-product">
-                <div class="products-grid">	                   
-                  {% include 'mega-menu-product-grid' %}	  
-                </div>                 
-              </div>              
-            </div>            
-          </div>
-          {% endif %}
-          {% if banner_first_style != blank %}
-         <div class="col-right">
-            <a href="{{ link_banner_first_style }}" title="">
-              <img src="{{ banner_first_style | img_url : "2000x" }}" alt="" />
-            </a>
-          </div>
-          {% endif %}        
-      </div>
-      {% endif %}      
-      {% elsif block_style == "style_5" %}      
-      {% if banner_first_style != blank or banner_second_style != blank  %}      
-      <div class="col-wide">
-        {% if banner_first_style != blank %}
-        <div class="bottom_left">          
-          <a href="{{ link_banner_first_style }}" title="">
-            <img src="{{ banner_first_style | img_url : "2000x" }}" alt="" />
-          </a>
-        </div>
-        {% endif %}
-        {% if banner_first_style != blank %}
-        <div class="bottom_right">          
-          <a href="{{ link_banner_second_style }}" title="">
-            <img src="{{ banner_second_style | img_url : "2000x" }}" alt="" />
-          </a>
-        </div>
-        {% endif %}
-      </div>      
-      {% endif %}
-      {% endif %}
-    </div>
+            {% if section.settings.display_megamenu %}
+
+                {% assign is_megamenu = false %}
+                {% for block in section.blocks %}
+                    {% for i in (1..5) %}
+                        {% capture cap_megamenu_item %}megamenu_items_{{ i }}{% endcapture %}
+                        {% capture cap_banner_first_style %}banner_first_style_{{ i }}{% endcapture %}
+                        {% capture cap_banner_second_style %}banner_second_style_{{ i }}{% endcapture %}
+                        {% capture cap_banner_third_style %}banner_third_style_{{ i }}{% endcapture %}
+
+
+                        {% capture cap_link_banner_first_style %}link_banner_first_style_{{ i }}{% endcapture %}
+                        {% capture cap_link_banner_second_style %}link_banner_second_style_{{ i }}{% endcapture %}
+                        {% capture cap_link_banner_third_style %}link_banner_third_style_{{ i }}{% endcapture %}
+
+
+                        {% capture cap_featured_product %}featured_product_{{ i }}{% endcapture %}
+                        {% capture cap_title_featured_product %}title_featured_product_{{ i }}{% endcapture %}
+                        {% capture cap_main_linklist %}main_linklist_{{ i }}{% endcapture %}
+
+                        {% comment %}
+                            For style 4
+                        {% endcomment %}
+                        {% capture cap_banner_four_style %}banner_four_style_{{ i }}{% endcapture %}
+
+                        {% if block.settings[cap_megamenu_item] != blank %}
+                            {% assign megamenu_item = block.settings[cap_megamenu_item] | handleize %}
+                            {% if megamenu_item == cat %}
+                                {% assign is_megamenu = true %}
+                                {% assign block_style = block.type %}
+
+                                {% assign banner_first_style = block.settings[cap_banner_first_style] %}
+                                {% assign banner_second_style = block.settings[cap_banner_second_style] %}
+                                {% assign banner_third_style = block.settings[cap_banner_third_style] %}
+
+
+                                {% assign link_banner_first_style = block.settings[cap_link_banner_first_style] %}
+                                {% assign link_banner_second_style = block.settings[cap_link_banner_second_style] %}
+                                {% assign link_banner_third_style = block.settings[cap_link_banner_third_style] %}
+
+
+                                {% assign featured_product = block.settings[cap_featured_product] %}
+                                {% assign title_featured_product = block.settings[cap_title_featured_product] %}
+                                {%- assign product = all_products[featured_product] -%}
+
+                                {% comment %}
+                                    For style 4
+                                {% endcomment %}
+                                {% assign banner_four_style = block.settings[cap_banner_four_style] %}
+                                {% assign main_linklist = block.settings[cap_main_linklist] %}
+
+
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+
+            {% endif %}
+
+
+            <li class=" {% if is_megamenu %}dropdown  mega-menu{% else %}{% if linklists[link.handle] != empty %} dropdown{% endif %}{% endif %}">
+                <a {%if linklists[link.handle] != empty %}class="menu__moblie" {% endif %} href="{{ link.url }}" class="{% if link.active %}current{% endif %}">
+                    <span>
+                      {{ link.title }}
+                    </span>
+                </a>
+
+                {% comment %}
+                    Check if menu item is Mega menu
+                {% endcomment %}
+                {% assign link_child = link.handle %}
+                {% if section.settings.display_megamenu %}
+
+                    {% if is_megamenu %}
+                        {% include 'mega-menu' with link_child %}
+                    {% else %}
+                        {% if linklists[link.handle] != empty %}
+                            {% include 'dropdown-menu' with link_child %}
+                        {% endif %}
+                    {% endif %}
+
+                {% else %}
+                    {% if linklists[link.handle] != empty %}
+                        {% include 'dropdown-menu' with link_child %}
+                    {% endif %}
+                {% endif %}
+
+            </li>
+        {% endfor %}
+    </ul>
 </div>

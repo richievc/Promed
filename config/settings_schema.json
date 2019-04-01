@@ -1,15 +1,71 @@
 [
   {
     "name": "theme_info",
-    "logo": "https:\/\/cdn.shopify.com\/s\/global\/branding\/shopify_logo_256x256.png",
+    "logo": "https://cdn.shopify.com/s/files/1/0110/9914/4256/t/7/assets/logo.png",
     "settings": [
       {
         "type": "header",
-        "content": "Minimal Theme"
+        "content": "Promed Theme"
       },
       {
         "type": "paragraph",
-        "content": "This theme is fully supported by Buddhathemes. For support and customizations, read the [theme documentation](https:\/\/wedesignthemes.com\/shopify\/boutique) or contact [support@wedesignthemes.com](mailto:support@wedesignthemes.com?subject=[Boutique]+Theme+Support)."
+        "content": "Promed CBD Shopify Theme "
+      }
+    ]
+  },
+  {
+    "name": "Company Detail",
+    "settings": [
+      {
+        "type": "text",
+        "id": "company_name",
+        "label": "Company Name"
+      },
+      {
+        "type": "text",
+        "id": "company_address",
+        "label": "Company Address"
+      },
+      {
+        "type": "text",
+        "id": "company_address2",
+        "label": "Company Address (Optional)"
+      },
+      {
+        "type": "text",
+        "id": "company_city",
+        "label": "Company City"
+      },
+      {
+        "type": "text",
+        "id": "company_state",
+        "label": "Company State",
+        "default": "FL"
+      },
+      {
+        "type": "text",
+        "id": "company_zip",
+        "label": "Company Postal Code"
+      },
+      {
+        "type": "text",
+        "id": "company_sales_phone",
+        "label": "Company Sales Phone"
+      },
+      {
+        "type": "text",
+        "id": "company_support_phone",
+        "label": "Company Support Phone"
+      },
+      {
+        "type": "text",
+        "id": "company_sales_email",
+        "label": "Company Sales Email"
+      },
+      {
+        "type": "text",
+        "id": "company_support_email",
+        "label": "Company Support Email"
       }
     ]
   },

@@ -93,7 +93,7 @@
           {% assign variant = product.selected_or_first_available_variant %}
           <meta itemprop="priceCurrency" content="{{ shop.currency }}">
           <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
-
+            {% include 'rw-rating' %}
           {% if settings.count_down_enable and settings.count_down_collections %}
           {% assign dealTime = settings.home_productdeal_time | split: ' ' | join: ' ' | split: ' ' %}
           {% include 'deal-snippet' %}

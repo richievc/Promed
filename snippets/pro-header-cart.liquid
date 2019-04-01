@@ -1,0 +1,112 @@
+<ul class=" pro-cart navbar-right">
+    <li class="dropdown">
+        <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+            <span class="fa fa-shopping-cart"></span>
+            {{ cart.item_count }} - Item(s)
+        </a>
+        <ul class="dropdown-menu dropdown-cart " role="menu">
+            {% if cart.item_count < 1 %}
+                <li>
+                    <div class="clearfix no-items">
+                        <p>{{ 'cart.general.empty' | t }}</p>
+                    </div>
+                </li>
+            {% else %}
+                {% for item in cart.items %}
+                    <li class="cart-item clearfix" id="cart-item-{{item.id}}">
+                        <div class="row">
+                            <div class="col-md-4 item-picture">
+                                <a href="{{item.url}}" title="{{item.title}}">
+                                    <img src="{{ item.image | product_img_url: 'small' }}" alt="{{item.title}}">
+                                </a>
+                            </div>
+                            <div class="col-md-8">
+                                <span class="cart-title">
+                                    <a href="{{item.url}}">
+                                        {{ item.product.title }}
+                                        {% if item.product.variants.size != 0 %}
+                                            {% unless item.variant.title contains 'Default' %}
+                                                <small>{{ item.variant.title }}</small>
+                                            {% endunless %}
+                                        {% endif %}
+                                    </a>
+                                </span>
+                                <p class="cart-collateral pull-right">
+                                    <span class="price">{{item.price | money}}</span> x {{item.quantity}}
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            {% endif %}
+            <li class="divider"></li>
+            <li>
+                <div class="cart-footer">
+                    <p class="cart-total clearfix">
+                        <span class="label pull-left" style="height: 40px; padding: 10px; line-height: 20px; color: #fff;">{{ 'cart.general.cart_total' | t }}</span>
+                        <span class="price pull-right" style="height: 40px; padding: 10px; line-height: 20px; color: #fff;">{{cart.total_price | money}}</span>
+                    </p>
+                </div>
+            </li>
+            <li class="divider"></li>
+            <li><a class="text-center" href="cart">View Cart</a></li>
+        </ul>
+    </li>
+</ul>
+<style>
+
+    ul.pro-cart {
+        list-style-type: none;
+        margin-left: 5px;
+    }
+    /* Dropdown */
+    ul.dropdown-cart {
+        min-width:      300px;
+    }
+    ul.dropdown-cart li.cart-item {
+        display:        block;
+        padding:        8px 16px;
+        margin:         3px 0;
+        width:          100%;
+        height:         auto;
+        border-radius:  none;
+    }
+    ul.dropdown-cart li.item .item-picture {
+        width:          120px;
+        float:          left;
+        text-align:     center;
+        background:     #eee;
+        border-right:   1px solid #777;
+    }
+    ul.dropdown-cart li.cart-item .cart-title {
+        display:        block;
+        width:          100%;
+        font-size:      12px;
+        font-weight:    bold;
+        line-height:    20px;
+        border-bottom:  1px dashed #888;
+    }
+    .cart-collateral {
+        font-size:      11px;
+        font-weight:    bold;
+    }
+    ul.dropdown-cart li .cart-footer {
+        background:     #111;
+        height:         100%;
+    }
+    ul.dropdown-cart li.cart-footer cart-total {
+        text-align:     right;
+        background:     #eee
+    }
+    ul.dropdown-cart li.cart-footer p.cart-total span.label,
+    ul.dropdown-cart li.cart-footer p.cart-total span.price {
+        color:          #fff;
+    }
+    .no-items {
+        line-height: 35px;
+        padding: 10px;
+        text-align: center;
+    }
+
+
+</style>

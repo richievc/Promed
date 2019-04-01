@@ -1,6 +1,24 @@
-<div data-section-id="{{ section.id }}" data-section-type="wide-banner-type-2" class="wide-banner-type-2">  
+<style>
+    div.wide-banner-type-2-block {
+        position:relative;
+        width:900px;
+        margin:0 auto;
+        background-color: inherit;
+        background-image: url('{{ section.settings.image_1 | img_url: 'master' }}');
+        background-attachment: fixed; //This is what is added to the code-sample
+        background-repeat: no-repeat;
+        background-position: right top;
+        height:auto !important;
+        height:100%;
+        min-height:100%;
+        background-size:cover;"
+    }
+</style>
+
+
+<div data-section-id="{{ section.id }}" data-section-type="wide-banner-type-2" class="wide-banner-type-2">
   <div class="grid-uniform">          
-    <div class="wide-banner-type-2-block parallax"  {% if section.settings.image_1 != blank %}  style="background-image:url('{{ section.settings.image_1 | img_url: 'master' }}');background-repeat:no-repeat;background-size:cover;"{% endif%}>      
+    <div class="wide-banner-type-2-block parallax">
       <div class="wide-banner-type-2-content"> 
         <div class="wide-banner-type-2-section" style="border:2px dashed {{ section.settings.border_color }}">
           <div class="wide-banner-type-2-rounded">
@@ -33,116 +51,116 @@
 
   </div>
 </div>
-{% schema %}
-{
-"name": "Wide Banner",
-"class": "index-section",
-"settings": [
-{
-"type": "image_picker",
-"id": "image_1",
-"label": "Image",
-"info": "Size: 1920x1200"
-},
-{
-"type": "color",
-"id": "bg_color",
-"label":"Round Bg color",
-"default": "#000"
-},
-{
-"type": "color",
-"id": "border_color",
-"label":"Border color",
-"default": "#000"
-},
-{
-"type": "image_picker",
-"id": "logo",
-"label": "Banner Logo",
-"info": "Size: 1920x1286"
-},
-{
-"type": "text",
-"id": "title_1",
-"label": "Heading"
-},
-{
-"type": "color",
-"id": "title_color",
-"label":"Title color",
-"default": "#000"
-},
-{
-"type": "color",
-"id": "title_2_color",
-"label":"Title second color",
-"default": "#000"
-},
-{
-"type": "textarea",
-"id": "text_1",
-"label": "Description"
-},
-{
-"type": "color",
-"id": "text_color",
-"label":"Text color",
-"default": "#000"
-},
-{
-"type": "text",
-"id": "titleshadow_1",
-"label": "Sub Heading"
-},
-{
-"type": "color",
-"id": "shadowtext_color",
-"label":"Text color",
-"default": "#000"
-},
-{
-"type": "text",
-"id": "button_1",
-"label": "Button text"
-},
-{
-"type": "color",
-"id": "button_bg_color",
-"label":"Background color",
-"default": "#000"
-},
-{
-"type": "color",
-"id": "button_txt_color",
-"label":"Text color",
-"default": "#fff"
-},
-{
-"type": "color",
-"id": "hover_button_bg_color",
-"label":"Hover Background color",
-"default": "#000"
-},
-{
-"type": "color",
-"id": "hover_button_txt_color",
-"label":"Hover Text color",
-"default": "#fff"
-},
-{
-"type": "url",
-"id": "link_1",
-"label": "Link URL"
-}
-],
-"presets": [
-{
-"name": "Wide Banner",
-"category": "Image",
-"blocks": []
-}
-]
+
+{% schema %} {
+      "name": "Wide Banner",
+      "class": "index-section",
+      "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image",
+      "info": "Size: 1920x1200"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label":"Round Bg color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label":"Border color",
+      "default": "#000"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Banner Logo",
+      "info": "Size: 1920x1286"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Heading"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label":"Title color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "title_2_color",
+      "label":"Title second color",
+      "default": "#000"
+    },
+    {
+      "type": "textarea",
+      "id": "text_1",
+      "label": "Description"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label":"Text color",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "titleshadow_1",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "color",
+      "id": "shadowtext_color",
+      "label":"Text color",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "button_1",
+      "label": "Button text"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label":"Background color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "button_txt_color",
+      "label":"Text color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "hover_button_bg_color",
+      "label":"Hover Background color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "hover_button_txt_color",
+      "label":"Hover Text color",
+      "default": "#fff"
+    },
+    {
+      "type": "url",
+      "id": "link_1",
+      "label": "Link URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wide Banner",
+      "category": "Image",
+      "blocks": []
+    }
+  ]
 }
 {% endschema %}
 

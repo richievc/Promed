@@ -1,0 +1,458 @@
+<ul class="pro-mega-nav">
+
+    <!-- MENU SLOT ONE -->
+    {% if section.settings.menu_slot_one != "" %}
+        <li>
+            <a href="{{ section.settings.menu_slot_one_url_one }}"
+               id="dropdownMenuButtonOne"
+               class="dropdown-toggle mega-dd"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false"
+            >{{ section.settings.menu_slot_one }}</a>
+            <div class="pro-mega-menu dropdown-menu clearfix" aria-labelledby="dropdownMenuButtonOne">
+                <div class="container">
+                    <div class="row no-gutter">
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_one_url_one }}">
+                                    <img src="{{ section.settings.menu_slot_one_image_one | img_url }}" alt="{{ section.settings.menu_slot_one_title_one }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_one_title_one }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_one_tagline_one }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_one_url_two }}">
+                                    <img src="{{ section.settings.menu_slot_one_image_two | img_url }}" alt="{{ section.settings.menu_slot_one_title_two }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_one_title_two }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_one_tagline_two }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_one_url_three }}">
+                                    <img src="{{ section.settings.menu_slot_one_image_three | img_url }}" alt="{{ section.settings.menu_slot_one_title_three }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_one_title_three }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_one_tagline_three }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_one_url_four }}">
+                                    <img src="{{ section.settings.menu_slot_one_image_four | img_url }}" alt="{{ section.settings.menu_slot_one_title_four }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_one_title_four }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_one_tagline_four }}
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </li>
+    {% endif %}
+
+    <!-- MENU SLOT TWO -->
+    {% if section.settings.menu_slot_two != "" %}
+        <li>
+            <a href="{{ section.settings.menu_slot_two_url_one }}"
+               id="dropdownMenuButtonTwo"
+               class="dropdown-toggle mega-dd"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false"
+            >{{ section.settings.menu_slot_two }}</a>
+            <div class="pro-mega-menu dropdown-menu clearfix" aria-labelledby="dropdownMenuButtonTwo">
+                <div class="container">
+                    <div class="row no-gutter">
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_two_url_one }}">
+                                    <img src="{{ section.settings.menu_slot_two_image_one | img_url }}" alt="{{ section.settings.menu_slot_two_title_one }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_two_title_one }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_two_tagline_one }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_two_url_two }}">
+                                    <img src="{{ section.settings.menu_slot_two_image_two | img_url }}" alt="{{ section.settings.menu_slot_two_title_two }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_two_title_two }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_two_tagline_two }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_two_url_three }}">
+                                    <img src="{{ section.settings.menu_slot_two_image_three | img_url }}" alt="{{ section.settings.menu_slot_two_title_three }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_two_title_three }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_two_tagline_three }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_two_url_four }}">
+                                    <img src="{{ section.settings.menu_slot_two_image_four | img_url }}" alt="{{ section.settings.menu_slot_two_title_four }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_two_title_four }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_two_tagline_four }}
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </li>
+    {% endif %}
+
+    <!-- MENU SLOT THREE -->
+    {% if section.settings.menu_slot_three != "" %}
+        <li>
+            <a href="{{ section.settings.menu_slot_three_url_one }}"
+               id="dropdownMenuButtonThree"
+               class="dropdown-toggle mega-dd"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false"
+            >{{ section.settings.menu_slot_three }}</a>
+            <div class="pro-mega-menu dropdown-menu clearfix" aria-labelledby="dropdownMenuButtonThree">
+                <div class="container">
+                    <div class="row no-gutter">
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_three_url_one }}">
+                                    <img src="{{ section.settings.menu_slot_three_image_one | img_url }}" alt="{{ section.settings.menu_slot_three_title_one }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_three_title_one }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_three_tagline_one }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_three_url_two }}">
+                                    <img src="{{ section.settings.menu_slot_three_image_two | img_url }}" alt="{{ section.settings.menu_slot_three_title_two }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_three_title_two }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_three_tagline_two }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_three_url_three }}">
+                                    <img src="{{ section.settings.menu_slot_three_image_three | img_url }}" alt="{{ section.settings.menu_slot_three_title_three }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_three_title_three }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_three_tagline_three }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_three_url_four }}">
+                                    <img src="{{ section.settings.menu_slot_three_image_four | img_url }}" alt="{{ section.settings.menu_slot_three_title_four }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_three_title_four }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_three_tagline_four }}
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </li>
+    {% endif %}
+
+    <!-- MENU SLOT FOUR -->
+    {% if section.settings.menu_slot_four != "" %}
+        <li>
+            <a href="{{ section.settings.menu_slot_four_url_one }}"
+               id="dropdownMenuButtonFour"
+               class="dropdown-toggle mega-dd"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false"
+            >{{ section.settings.menu_slot_four }}</a>
+            <div class="pro-mega-menu dropdown-menu clearfix" aria-labelledby="dropdownMenuButtonFour">
+                <div class="container">
+                    <div class="row no-gutter">
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_four_url_one }}">
+                                    <img src="{{ section.settings.menu_slot_four_image_one | img_url }}" alt="{{ section.settings.menu_slot_four_title_one }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_four_title_one }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_four_tagline_one }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_four_url_two }}">
+                                    <img src="{{ section.settings.menu_slot_four_image_two | img_url }}" alt="{{ section.settings.menu_slot_four_title_two }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_four_title_two }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_four_tagline_two }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_four_url_three }}">
+                                    <img src="{{ section.settings.menu_slot_four_image_three | img_url }}" alt="{{ section.settings.menu_slot_four_title_three }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_four_title_three }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_four_tagline_three }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_four_url_four }}">
+                                    <img src="{{ section.settings.menu_slot_four_image_four | img_url }}" alt="{{ section.settings.menu_slot_four_title_four }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_four_title_four }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_four_tagline_four }}
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </li>
+    {% endif %}
+
+    <!-- MENU SLOT FIVE -->
+    {% if section.settings.menu_slot_five != "" %}
+        <li>
+            <a href="{{ section.settings.menu_slot_five_url_one }}"
+               id="dropdownMenuButtonFive"
+               class="dropdown-toggle mega-dd"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false"
+            >{{ section.settings.menu_slot_five }}</a>
+            <div class="pro-mega-menu dropdown-menu clearfix" aria-labelledby="dropdownMenuButtonFive">
+                <div class="container">
+                    <div class="row no-gutter">
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_five_url_one }}">
+                                    <img src="{{ section.settings.menu_slot_five_image_one | img_url }}" alt="{{ section.settings.menu_slot_five_title_one }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_five_title_one }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_five_tagline_one }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_five_url_two }}">
+                                    <img src="{{ section.settings.menu_slot_five_image_two | img_url }}" alt="{{ section.settings.menu_slot_five_title_two }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_five_title_two }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_five_tagline_two }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_five_url_three }}">
+                                    <img src="{{ section.settings.menu_slot_five_image_three | img_url }}" alt="{{ section.settings.menu_slot_four_title_three }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_five_title_three }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_five_tagline_three }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_five_url_four }}">
+                                    <img src="{{ section.settings.menu_slot_five_image_four | img_url }}" alt="{{ section.settings.menu_slot_five_title_four }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_five_title_four }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_five_tagline_four }}
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </li>
+    {% endif %}
+
+    <!-- MENU SLOT SIX -->
+    {% if section.settings.menu_slot_six != "" %}
+        <li>
+            <a href="{{ section.settings.menu_slot_six_url_one }}"
+               id="dropdownMenuButtonSix"
+               class="dropdown-toggle mega-dd"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false"
+            >{{ section.settings.menu_slot_six }}</a>
+            <div class="pro-mega-menu dropdown-menu clearfix" aria-labelledby="dropdownMenuButtonSix">
+                <div class="container">
+                    <div class="row no-gutter">
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_six_url_one }}">
+                                    <img src="{{ section.settings.menu_slot_six_image_one | img_url }}" alt="{{ section.settings.menu_slot_six_title_one }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_five_title_one }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_six_tagline_one }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_six_url_two }}">
+                                    <img src="{{ section.settings.menu_slot_six_image_two | img_url }}" alt="{{ section.settings.menu_slot_six_title_two }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_six_title_two }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_six_tagline_two }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_six_url_three }}">
+                                    <img src="{{ section.settings.menu_slot_six_image_three | img_url }}" alt="{{ section.settings.menu_slot_six_title_three }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_six_title_three }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_six_tagline_three }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel col-md-3">
+                            <div class="image-panel fill">
+                                <a href="{{ section.settings.menu_slot_six_url_four }}">
+                                    <img src="{{ section.settings.menu_slot_five_image_four | img_url }}" alt="{{ section.settings.menu_slot_six_title_four }}" />
+                                </a>
+                            </div>
+                            <div class="detail-panel">
+                                <div class="detail-panel-title">{{ section.settings.menu_slot_six_title_four }}</div>
+                                <span class="detail-panel-text">
+                                    {{ section.settings.menu_slot_six_tagline_four }}
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </li>
+    {% endif %}
+</ul>

@@ -69,7 +69,7 @@ timber.productPage = function (options) {
     {% if settings.display_availability %}
     if (variant.available) {
       if (variant.inventory_management!=null) {
-        jQuery("#product-inventory span").text(variant.inventory_quantity + " " + window.in_stock);
+        jQuery("#product-inventory span").text(window.in_stock);
       } else {
         jQuery("#product-inventory span").text(window.many_in_stock);
       }
